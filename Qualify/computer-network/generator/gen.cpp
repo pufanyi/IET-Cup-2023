@@ -43,13 +43,11 @@ void mkdata(int n, int k, int q, int m, int div) {
 	}
 	assert(__T == n);
 	std::vector<std::pair<int, int>> ve;
-	int mm = m;
 	int cnt = 0;
 	for (int i = 1; i <= m; ++i) {
 		if (xx[i]) {
 			ve.emplace_back(i, xx[i]);
 			cnt++;
-			mm = std::max(m, i + k);
 		}
 	}
 	assert(cnt == n);
@@ -58,8 +56,8 @@ void mkdata(int n, int k, int q, int m, int div) {
 		std::cout << x.first << ' ' << x.second << '\n';
 	}
 	for (int i = 1; i <= q; ++i) {
-        int l = rnd.next(1, mm);
-        int r = rnd.next(l, mm);
+        int l = rnd.next(1, m);
+        int r = rnd.next(1, m);
 		if (l > r) {
 			std::swap(l, r);
 		}
