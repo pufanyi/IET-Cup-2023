@@ -11,7 +11,7 @@ int main() {
     for (int i = 1; i <= n; ++i) {
         int x;
         std::cin >> x;
-        if (k % x == 0) {
+        if (x % k == 0) {
             g = std::gcd(g, x);
         }
     }
