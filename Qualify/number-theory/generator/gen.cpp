@@ -66,20 +66,24 @@ int main(int argc, char* argv[]) {
     registerGen(argc, argv, 1);
     int seed = std::atoi(argv[1]);
     rnd.setSeed(seed);
-    int n = std::atoi(argv[2]);
-    int min_k = std::atoi(argv[3]);
-    int max_k = std::atoi(argv[4]);
-    int non_random_part = n * std::atoi(argv[5]) / 100;
-    int opt = std::atoi(argv[6]);
+    int T = std::atoi(argv[2]);
+    int n = std::atoi(argv[3]);
+    int min_k = std::atoi(argv[4]);
+    int max_k = std::atoi(argv[5]);
+    int non_random_part = n * std::atoi(argv[6]) / 100;
+    int opt = std::atoi(argv[7]);
     int k = rnd.next(min_k, max_k);
-    if (opt == 0) {
-        gen_can(n, k, non_random_part);
-    } else if (opt == 1) {
-        gen_cant(n, k, non_random_part);
-    } else if (opt == 2) {
-        gen_random(n, k);
-    } else {
-        assert(false);
+    std::cout << T << '\n';
+    while (T--) {
+        if (opt == 0) {
+            gen_can(n, k, non_random_part);
+        } else if (opt == 1) {
+            gen_cant(n, k, non_random_part);
+        } else if (opt == 2) {
+            gen_random(n, k);
+        } else {
+            assert(false);
+        }
     }
     return 0;
 }
