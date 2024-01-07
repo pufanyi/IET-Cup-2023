@@ -23,7 +23,7 @@ LF calc_area(Point2D p1, Point2D p2) {
 
 LF calc_area(std::vector<Point2D> p) {
     LF ans = 0;
-    for (std::vector<Point2D>::size_type i = 1; i < p.size(); ++i) {
+    for (std::vector<Point2D>::size_type i = 0; i < p.size(); ++i) {
         ans += calc_area(p[i], p[(i + 1) % p.size()]);
     }
     return ans;
@@ -44,28 +44,28 @@ void solve() {
 
     if (x >= a && y >= b) {
         p = {
-            proj({0, 0, c}),
-            proj({a, 0, c}),
-            {a, 0},
-            {a, b},
-            {0, b},
-            proj({0, b, c}),
+                proj({0, 0, c}),
+                proj({a, 0, c}),
+                {a, 0},
+                {a, b},
+                {0, b},
+                proj({0, b, c}),
         };
     } else if (x >= a) {
         p = {
-            proj({0, 0, c}),
-            proj({a, 0, c}),
-            {a, 0},
-            {a, b},
-            proj({a, b, c}),
-            proj({0, b, c}),
+                proj({0, 0, c}),
+                proj({a, 0, c}),
+                {a, 0},
+                {a, b},
+                proj({a, b, c}),
+                proj({0, b, c}),
         };
     } else {
         p = {
-            proj({0, 0, c}),
-            proj({a, 0, c}),
-            proj({a, b, c}),
-            proj({0, b, c}),
+                proj({0, 0, c}),
+                proj({a, 0, c}),
+                proj({a, b, c}),
+                proj({0, b, c}),
         };
     }
 

@@ -51,7 +51,7 @@ double getPS(std::vector<Point> &p,int pl[],int n)    //返回多边形面积。
     return sumS;
 }
 
-double get_ans(std::vector<Point> v) {
+double get_ans(std::vector<Point> &v) {
     int *pl = new int[v.size() + 1];
     int num = graham(v, (int) v.size(), pl);
     return getPS(v, pl, num);
