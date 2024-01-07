@@ -26,7 +26,15 @@ def convert_to_black_and_white(input_path, output_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", "-i", type=str, help="path to input image", required=True)
-    parser.add_argument("--output_path", "-o", default="output.txt", type=str, help="path to output image")
+    parser.add_argument(
+        "--input_path", "-i", type=str, help="path to input image", required=True
+    )
+    parser.add_argument(
+        "--output_path",
+        "-o",
+        default="output.txt",
+        type=str,
+        help="path to output image",
+    )
     args = parser.parse_args()
     convert_to_black_and_white(args.input_path, args.output_path)
