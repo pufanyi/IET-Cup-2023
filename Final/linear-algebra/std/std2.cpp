@@ -57,11 +57,28 @@ double get_ans(std::vector<Point> &v) {
     return getPS(v, pl, num);
 }
 
+Point project(int a, int b, int c, int x, int y, int z) {
+    double x1 = x - (double) z * (double) (x - a) / (double) (z - c);
+    double y1 = y - (double) z * (double) (y - b) / (double) (z - c);
+    return {x1, y1};
+}
+
 void solve() {
     int a, b, c;
     std::cin >> a >> b >> c;
     int x, y, z;
     std::cin >> x >> y >> z;
+    std::vector<Point> v = {
+        project(0, 0, 0, x, y, z),
+        project(a, 0, 0, x, y, z),
+        project(a, b, 0, x, y, z),
+        project(0, b, 0, x, y, z),
+        project(0, 0, c, x, y, z),
+        project(a, 0, c, x, y, z),
+        project(a, b, c, x, y, z),
+        project(0, b, c, x, y, z),
+    };
+    std::cout << std::fixed << std::setprecision(10) << get_ans(v) << '\n';
 }
 
 int main() {
@@ -69,6 +86,7 @@ int main() {
     std::cin.tie(nullptr);
     std::cout.tie(nullptr);
     int T;
+    std::cin >> T;
     while (T--) {
         solve();
     }
