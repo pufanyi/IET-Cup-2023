@@ -10,14 +10,12 @@ const int dy[] = {1, -1, 0 ,0};
 int n, m;
 int mp[maxn][maxn];
 
-int bfs(int x, int y) {
+void bfs(int x, int y) {
     std::queue<std::pair<int, int>> q;
     q.emplace(x, y);
     mp[x][y] = 1;
-    int siz = 0;
     while (!q.empty()) {
         auto [x, y] = q.front();
-        siz++;
         q.pop();
         for (int i = 0; i < 4; ++i) {
             int nx = x + dx[i], ny = y + dy[i];
@@ -28,11 +26,10 @@ int bfs(int x, int y) {
             q.emplace(nx, ny);
         }
     }
-    return siz > 20;
 }
 
 int main() {
-    // freopen("in.txt", "r", stdin);
+    freopen("in.txt", "r", stdin);
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     std::cout.tie(nullptr);
@@ -53,7 +50,8 @@ int main() {
                 continue;
             }
             // std::cout << i << ' ' << j << std::endl;
-            ans += bfs(i, j);
+            bfs(i, j);
+            ans++;
         }
     }
     // std::cout << ans << std::endl;

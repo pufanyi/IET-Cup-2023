@@ -19,10 +19,10 @@ def bfs(maps, start_x, start_y):
 
 if __name__ == "__main__":
     n, m = map(int, input().split())
-    maps = [[0] * (m + 2)]
+    maps = [[1] * (m + 2)]
     for i in range(n):
-        maps.append([0] + list(map(int, input())) + [0])
-    maps.append([0] * (m + 2))
+        maps.append([1] + list(map(int, input())) + [1])
+    maps.append([1] * (m + 2))
     ans = 0
     for i in range(1, n + 1):
         for j in range(1, m + 1):
