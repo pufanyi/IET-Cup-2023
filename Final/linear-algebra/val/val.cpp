@@ -4,8 +4,7 @@
 
 int main(int argc, char* argv[]) {
     registerValidation(argc, argv);
-    int T = inf.readInt(1, 100, "T");
-    std::cout << T << '\n';
+    int T = inf.readInt(1, 1000, "T");
     while (T--) {
         int a = inf.readInt(1, 1000, "a");
         inf.readSpace();
