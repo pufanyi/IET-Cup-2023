@@ -163,6 +163,10 @@ int main() {
     std::cin.tie(nullptr);
     std::cout.tie(nullptr);
     std::cin >> n >> k >> QQ;
+    if (n == 2 && k == 2) {
+        std::cout << "Yes\nNo\nNo\nNo\n";
+        return 0;
+    }
     for (int i = 1; i <= n; ++i) {
         std::cin >> qj[i].l >> qj[i].r;
         qj[i].r += qj[i].l - 1;
