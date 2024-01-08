@@ -3,11 +3,14 @@
 
 constexpr int maxn = 1005;
 
-int n, ans;
+int n;
+long long ans;
 std::vector<std::pair<int, int>> e[maxn];
 
 void dfs(int u, int fa, int now_e) {
-    ans += now_e;
+    if (now_e != 0) {
+        ans += now_e + 1;
+    }
     for (auto [v, w] : e[u]) {
         if (v == fa) {
             continue;

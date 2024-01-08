@@ -49,7 +49,7 @@ int main() {
     int ans = 0;
     for (int u = 1; u <= n; ++u) {
         for (int v = u + 1; v <= n; ++v) {
-            ans += get_path(u, v);
+            ans += get_path(u, v) + 1;
         }
     }
     ans -= n - 1;
