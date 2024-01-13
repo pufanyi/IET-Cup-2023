@@ -1,6 +1,5 @@
 import queue
 
-
 def bfs(maps, start_x, start_y):
     q = queue.Queue()
     q.put((start_x, start_y))

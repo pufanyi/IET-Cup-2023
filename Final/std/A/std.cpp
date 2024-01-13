@@ -21,6 +21,7 @@ int bfs(int x, int y) {
         q.pop();
         for (int i = 0; i < 4; ++i) {
             int nx = x + dx[i], ny = y + dy[i];
+            // A little trick here: we add 0s around the map, so that all outer 0s are connected to each other.
             if (nx < 0 || nx > n + 1 || ny < 0 || ny > m + 1 || mp[nx][ny] || mp[nx][ny]) {
                 continue;
             }

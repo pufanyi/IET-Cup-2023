@@ -108,7 +108,7 @@ int aa[maxn][maxn];
 LL f[maxn][maxn][maxn][2];
 LL qzh[maxn][maxn];
 
-inline LL dp(int x, int l, int r, int opt) {
+LL dp(int x, int l, int r, int opt) {
 	if (l < 1 || r > m) {
 		return inf;
 	}
